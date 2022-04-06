@@ -70,8 +70,8 @@ best_student.courses_in_progress += ['Python']
 review = Reviewer('Some', 'Buddy')
 review.courses_attached += ['Python']
 
-print(review)
-print()
+#print(review)
+#print()
 
 review.rate_hw(best_student, 'Python', 10)
 review.rate_hw(best_student, 'Python', 10)
@@ -80,9 +80,26 @@ review.rate_hw(best_student, 'Python', 10)
 lect = Lecturer('Some', 'Buddy')
 lect.get_rates()
 
-print(lect)
-print()
-print(best_student)
+#print(lect)
+#print()
+#print(best_student)
 
-print()
-print(best_student.grades)
+#print()
+#print(best_student.grades)
+def main():
+    while True:
+        user_input = input('Введите команду: ')
+        if user_input == 'r':
+            print(review)
+        elif user_input == 'l':
+            print(lect)
+        elif user_input == 's':
+            print(best_student)
+        elif user_input == 'g':
+            print(best_student.grades)
+
+        elif user_input == 'q':
+            break
+        else:
+            print('l-lecturer, r-review, s-student, g-grader, q-break .')
+main()
